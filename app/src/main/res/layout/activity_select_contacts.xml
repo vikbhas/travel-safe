@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.isee_project.travelsafe.SelectFollowerActivity"
+    android:background="@color/colorPrimary">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_select_guardian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/createJourney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/top_rect"
+        app:layout_constraintVertical_bias="0.07">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/top_rect"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/colorSecondaryDark"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp" />
+
+
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="9dp"
+            app:layout_constraintBottom_toBottomOf="@id/top_rect"
+            app:layout_constraintTop_toTopOf="@id/top_rect"
+            app:layout_constraintStart_toStartOf="@id/top_rect"
+            android:padding="15dp"
+            app:srcCompat="@drawable/back_arrow_light"
+            android:background="@android:color/transparent"/>
+
+        <EditText
+            android:id="@+id/editTextCode"
+            android:visibility="invisible"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="phone"
+            android:maxLength="3"
+             android:paddingVertical="10dp"
+            android:text="+49"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/top_rect"
+            app:layout_constraintTop_toTopOf="@id/top_rect"
+            app:layout_constraintEnd_toStartOf="@id/editTextNumber"/>
+
+
+            <EditText
+            android:id="@+id/editTextNumber"
+                android:visibility="invisible"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/numberentered"
+            app:layout_constraintBottom_toBottomOf="@id/top_rect"
+            app:layout_constraintTop_toTopOf="@id/top_rect"
+            android:layout_marginHorizontal="10dp"
+            android:hint="@string/selectGuardians_enterNumber"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/numberentered"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/enterNumber"
+            app:layout_constraintBottom_toBottomOf="@id/top_rect"
+            app:layout_constraintTop_toTopOf="@id/top_rect"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/tick_fin" />
+
+
+    <ImageButton
+        android:id="@+id/enterNumber"
+        android:layout_width="64dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="2dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/top_rect"
+        app:layout_constraintEnd_toStartOf="@+id/addPhoneContact"
+        app:layout_constraintTop_toTopOf="@id/top_rect"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/dial" />
+
+    <ImageButton
+        android:id="@+id/addPhoneContact"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/top_rect"
+        app:layout_constraintEnd_toEndOf="@id/top_rect"
+        app:layout_constraintTop_toTopOf="@id/top_rect"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/address_book" />
+
+    <TextView
+        android:id="@+id/noFriendsError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/segoe"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toTopOf="@id/createJourney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <TextView
+        android:id="@+id/friendsError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/segoe"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@id/createJourney"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/createJourney"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorSecondaryDark"
+        android:fontFamily="@font/segoe"
+        android:text="@string/selectGuardian_startJourney"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+
+    <TextView
+        android:id="@+id/noInternetAlert"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:fontFamily="@font/segoe"
+        android:gravity="center"
+        android:text="@string/noInternet_pleaseCheckInternet"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

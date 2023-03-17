@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:name="com.isee_project.travelsafe.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_travelsafe"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher__round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name="com.isee_project.travelsafe.PhoneContactsActivity"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name="com.isee_project.travelsafe.NoInternetService"
+            android:exported="false" />
+
+        <activity android:name="com.isee_project.travelsafe.IntroductionActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name="com.isee_project.travelsafe.WardETAReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.isee_project.travelsafe.ETAReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="com.isee_project.travelsafe.FollowerAddedService"
+            android:exported="false" />
+
+        <activity android:name="com.isee_project.travelsafe.TrackTravelActivity"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name="com.isee_project.travelsafe.PositionTrackingService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.isee_project.travelsafe.JourneyActivity"
+            android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="com.isee_project.travelsafe.FollowerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.isee_project.travelsafe.WelcomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.isee_project.travelsafe.SignUpActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.isee_project.travelsafe.LogInActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.isee_project.travelsafe.SelectFollowerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.isee_project.travelsafe.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

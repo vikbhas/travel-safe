@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/journeys_tatusbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.isee_project.travelsafe.FollowerActivity"
+    >
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="com.isee_project.travelsafe.FollowerActivity" />
+
+    <LinearLayout
+        android:id="@+id/sourceDestinationLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button_light"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_arrow_light" />
+
+            <ImageButton
+                android:id="@+id/driving_fin"
+                android:layout_width="41dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/driving_fin" />
+
+            <ImageButton
+                android:id="@+id/driving_light"
+                android:layout_width="41dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/driving_light"
+                android:visibility="gone"
+                />
+
+            <ImageButton
+                android:id="@+id/cycling_fin"
+                android:layout_width="36dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/cycling_fin"
+                android:visibility="gone"
+                />
+
+            <ImageButton
+                android:id="@+id/cycling_light"
+                android:layout_width="36dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/cycling_light" />
+
+            <ImageButton
+                android:id="@+id/walking_fin"
+                android:layout_width="43dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/walking_fin"
+                android:visibility="gone"
+                />
+
+            <ImageButton
+                android:id="@+id/walking_light"
+                android:layout_width="43dp"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/walking_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sourceLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_button_light"
+            >
+
+            <ImageView
+                android:id="@+id/sourceIcon"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/location"
+                app:srcCompat="@drawable/location" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/source"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/segoe"
+                    android:gravity="center_vertical"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/guard_enterSource"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                    <ProgressBar
+                        android:id="@+id/sourceProgressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:background="@drawable/rounded_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:indeterminate="true"
+                        android:indeterminateTintMode="src_atop"
+                        android:indeterminateTint="@color/colorPrimary"
+                        android:visibility="gone"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/journeyDestinationLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_button_light"
+            >
+
+            <ImageView
+                android:id="@+id/journeyDestinationIcon"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/location"
+                app:srcCompat="@drawable/location"
+                tools:srcCompat="@drawable/location" />
+            <TextView
+                android:id="@+id/destination"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_button_secondary"
+                android:fontFamily="@font/segoe"
+                android:gravity="center_vertical"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="15dp"
+                android:text="@string/guard_enterDestination"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp" />
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginVertical="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                >
+                <ImageButton
+                    android:id="@+id/AddETA"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/add_fin"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/ETA"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/segoe"
+                    android:textSize="12sp"
+                    tools:text="@string/guard_eta"
+                    />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/GPSSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:fontFamily="@font/segoe"
+                android:gravity="center"
+                android:hint="@string/guard_GPSTracking"
+                android:textColorHint="@color/colorAccent"
+                android:theme="@style/notificationsSwitch"
+                android:trackTint="@color/colorAccent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ETAInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/segoe"
+                android:text="@string/guard_addETA"
+                android:layout_marginRight="5dp"
+                />
+            <EditText
+                android:id="@+id/userETAInput"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_button"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/segoe"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:paddingHorizontal="10dp"
+                />
+            <ImageButton
+                android:id="@+id/ETAEntered"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/tick_fin"
+                android:background="@android:color/transparent"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/sourceAutocompletePlaceholder"
+        android:layout_width="389dp"
+        android:layout_height="545dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/destinationAutocompletePlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="281dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="20dp"></FrameLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/selectGuardiansError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/segoe"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@id/selectGuardians"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sourceDestinationLinearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/selectGuardians"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/rounded_button_secondary"
+        android:fontFamily="@font/segoe"
+        android:text="@string/guard_selectGuardians"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sourceDestinationLinearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/signUpWithLinLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        >
+<!--        <ImageButton-->
+<!--            android:id="@+id/Home"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginHorizontal="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/home_dark" />-->
+
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/Guard"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/guard_button" />-->
+
+        <ImageButton
+            android:id="@+id/sos"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingVertical="10dp"
+            app:srcCompat="@drawable/sos_dark" />
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/Profile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginHorizontal="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/contact_icon" />-->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noInternetAlert"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:text="@string/noInternet_pleaseCheckInternet"
+        android:fontFamily="@font/segoe"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

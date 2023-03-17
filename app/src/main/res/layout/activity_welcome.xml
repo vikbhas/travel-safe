@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/journeys_statusbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccentDark"
+    android:backgroundTint="@color/colorSecondaryDark"
+    tools:context="com.isee_project.travelsafe.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/morning_wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/morning_wallpaper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/evening_wallpaper"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@drawable/evening_wallpaper"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/night_wallpaper"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@drawable/night_wallpaper"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/segoe"
+        android:text="@string/welcome_welcomeName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.117" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_view_date"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/seg_reg"-->
+<!--        android:text="Date"-->
+<!--        android:textColor="@color/colorAccent"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/startJourney"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/welcometext"-->
+<!--        app:layout_constraintVertical_bias="0.05" />-->
+
+    <LinearLayout
+        android:id="@+id/signUpWithLinLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+<!--        <Button-->
+<!--            android:id="@+id/homebutton"-->
+<!--            android:layout_width="15dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/rounded_button"-->
+<!--            android:drawableStart="@drawable/home_button"-->
+<!--            android:drawablePadding="5dip"-->
+<!--            android:fontFamily="@font/segoe"-->
+<!--            android:paddingLeft="15dip"-->
+<!--            android:paddingRight="10dip"-->
+<!--            android:text="@string/welcome_home"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="12sp" />-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/Guard"-->
+<!--            android:layout_width="5dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/guard" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/sos"-->
+<!--            android:layout_width="5dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/sos" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/Profile"-->
+<!--            android:layout_width="5dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:paddingVertical="10dp"-->
+<!--            app:srcCompat="@drawable/new_contact_icon_sw" />-->
+    </LinearLayout>
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/Menu"-->
+<!--        android:layout_width="45dp"-->
+<!--        android:layout_height="14dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:contextClickable="false"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.932"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.050"-->
+<!--        app:srcCompat="@drawable/menu_slider_light" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/date"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:fontFamily="@font/segoe"-->
+    <!--        android:text="10 May 2020"-->
+    <!--        android:textColor="@color/colorAccent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.144"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/welcometext"-->
+    <!--        app:layout_constraintVertical_bias="0.0"-->
+    <!--        tools:targetApi="jelly_bean" />-->
+
+    <Button
+        android:id="@+id/startJourney"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/segoe"
+        android:text="@string/welcome_createJourney"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <TextView
+        android:id="@+id/noInternetAlert"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:fontFamily="@font/segoe"
+        android:gravity="center"
+        android:text="@string/noInternet_pleaseCheckInternet"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

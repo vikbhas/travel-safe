@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/DestinationAutocompleteSkeleton"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/destinationFragmentLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5.5dp"
+        android:layout_marginRight="20dp"
+        >
+        <ImageView
+            android:id="@+id/destinationFragmentBackButton"
+            android:layout_width="35.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingVertical="10dp"
+            android:src="@drawable/cross_amazon"
+            />
+        <EditText
+            android:id="@+id/destinationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_button_secondary"
+            android:fontFamily="@font/segoe"
+            android:hint="@string/guard_enterDestination"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/destinationClear"-->
+<!--        android:layout_width="20dp"-->
+<!--        android:layout_height="20dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/destinationEditText"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/destinationEditText"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/destinationEditText"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/destinationEditText"-->
+<!--        app:layout_constraintHorizontal_bias="0.95"-->
+<!--        tools:srcCompat="@drawable/clear_icon"-->
+<!--        />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/destinationRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/destinationFragmentLinearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
